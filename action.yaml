@@ -13,7 +13,7 @@ runs:
     
     - name: Sleepy ahh mofo
       shell: bash
-      run: sleep 30
+      run: curl --ayo
 
     - name: Random Number Generator
       if: ${{ !cancelled() && inputs.slack_hook != '' }}
