@@ -13,6 +13,6 @@ runs:
 
     - name: Random Number Generator
       if: ${{ inputs.slack_hook != '' }}
-      id: random-number-generator
+      shell: bash
       run: echo "Slack hook was set"
 
