@@ -10,9 +10,13 @@ runs:
     - name: Hello World
       shell: bash
       run: echo "Hello World"
+    
+    - name: Sleepy ahh mofo
+      shell: bash
+      run: sleep 30
 
     - name: Random Number Generator
-      if: ${{ inputs.slack_hook != '' }}
+      if: ${{ !cancelled() && inputs.slack_hook != '' }}
       shell: bash
-      run: echo "Slack hook was set"
+      run: echo "GET NOTIFIED"
 
