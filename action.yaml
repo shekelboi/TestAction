@@ -1,0 +1,18 @@
+name: Test Action
+description: Testing purposes
+inputs:
+  slack_hook:
+    description: 'Slack hook'
+
+runs:
+  using: composite
+  steps:
+    - name: Hello World
+      shell: bash
+      run: echo "Hello World"
+
+    - name: Random Number Generator
+      if: ${{ inputs.slack_hook != '' }}
+      id: random-number-generator
+      run: echo "Slack hook was set"
+
